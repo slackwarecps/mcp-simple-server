@@ -136,6 +136,35 @@ paths:
 
 ---
 
+## 🐳 Docker
+
+Este projeto está pronto para ser executado em containers.
+
+### 1. Construir a Imagem
+Para gerar a imagem Docker localmente:
+```bash
+docker build -t mcp-simple-server .
+```
+
+### 2. Subir o Container (Docker Compose)
+A forma recomendada de rodar é utilizando o `docker-compose.yml` já incluso, que configura a rede e as variáveis de ambiente:
+```bash
+docker compose up -d
+```
+
+O container será criado com o nome `mcp-simple-server` e estará disponível na porta `3030`.
+
+### 3. Verificar Status e Logs
+```bash
+# Ver se o container está rodando
+docker ps | grep mcp-simple-server
+
+# Ver logs do servidor
+docker compose logs -f
+```
+
+---
+
 ## 🛠️ Desenvolvimento
 
 Para rodar o servidor localmente:
