@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-const PORT = 3030;
-const AUTH_TOKEN = 'senha-facil-123';
+const PORT = process.env.PORT || 3030;
+const AUTH_TOKEN = process.env.AUTH_TOKEN || 'senha-facil-123';
 
 // Middleware de Autenticação
 app.use((req, res, next) => {
