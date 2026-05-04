@@ -43,8 +43,29 @@ Como este servidor usa HTTP direto (e não o padrão stdio), você pode usar um 
 **Exemplo de configuração (Assumindo uso de um proxy stdio-to-http):**
 ```bash
 # No gemini-cli
+
+
 gemini mcp add remote-server --command "npx @modelcontextprotocol/inspector http://10.7.0.1:3030/mcp"
+
+
 ```
+
+No arquivo ~/.gemini/settings.json
+
+```
+"mcpServers": {                                                                                                                      
+    "local-mcp": {                                                                                                                                     
+      "url": "http://192.168.1.100:3030/mcp",                                                                                                          
+      "headers": {                                                                                                                                     
+        "Authorization": "Bearer senha-facil-123"                                                                                                      
+      }                                                                                                                                                
+    }             
+  }
+
+```
+
+
+
 *Nota: Substitua o IP pelo endereço correto (ex: 10.7.0.1 da VPN).*
 
 ---
@@ -119,6 +140,8 @@ paths:
 
 Para rodar o servidor localmente:
 ```bash
+cd ~/apps/mcp-simple-server
+npm install
 node server.js
 ```
 
